@@ -1,0 +1,68 @@
+package com.everis.data.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.everis.data.models.Valdes;
+import com.everis.data.services.ValdesService;
+import com.everis.sumativa1.models.Usuario;
+
+
+@Controller
+public class ValdesController {
+
+	
+	
+	@Autowired
+	ValdesService valdesService;
+	
+	@RequestMapping("/ValdesForm")
+	public String rutaInicial() {
+		
+		return "/Valdes/ValdesForm.jsp";
+		
+	}
+	
+	@RequestMapping("/IV")
+	public String ingValdes(@RequestParam(value = "nombre") String nombre, @RequestParam(value = "apellido") String apellido, Model model) {
+				
+		Valdes valdes = new Valdes();
+		
+		
+		valdes.setNombre(nombre);
+		valdes.setApellido(apellido);
+		
+		valdes = valdesService.guardarValdes(valdes);
+		System.out.println(valdes.getApellido());
+		//return "redirect:/ListarValdes";
+		
+		return valdes.getNombre();
+	}
+	
+	
+	@RequestMapping("/eliminarValdes/{id}")
+	public String eliminarUsuarios(@PathVariable("id") Long id) {
+		
+		valdesService.eliminarValdes(id);
+		
+		return "redirect:/listarValdes";
+	}
+	
+	
+	@RequestMapping("/listarValdes")
+	public String listarUsuarios( Model model) {
+		List<Valdes> listar_valdes=valdesService.listaValdes();
+		model.addAttribute("listar_valdes",listar_valdes);
+		return "/Valdes/ListarValdes.jsp";
+	}
+	
+	
+	
+	
+}

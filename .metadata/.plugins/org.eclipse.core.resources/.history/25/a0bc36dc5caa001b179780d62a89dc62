@@ -1,0 +1,27 @@
+package com.everis.sumativa1.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class VentaController {
+
+	@RequestMapping("/ventas")
+	public String usuarios(@RequestParam(value = "codigo") String codigo,
+			@RequestParam(value = "producto") String producto, @RequestParam(value = "cantidad") String cantidad,
+			@RequestParam(value = "usuario") String usuario, Model model) {
+				
+				model.addAttribute("codigo", codigo);
+				model.addAttribute("producto", producto);
+				model.addAttribute("cantidad", cantidad);
+				model.addAttribute("usuario", usuario);
+				System.out.println("campos de ventas : "+codigo+" "+producto+" "+cantidad+" "+usuario);
+			return "formVenta.jsp";
+		
+	}
+
+	
+	
+}

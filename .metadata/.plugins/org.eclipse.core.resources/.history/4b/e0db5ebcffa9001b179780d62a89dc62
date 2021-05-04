@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a id="producto" href="/ingProducto">Ingreso de productos</a>
+	<a id="venta" href="/ingVenta">Ingreso de ventas</a>
+	<a id="usuario" href="/ingUsuario">Ingreso de usuarios</a>
+</body>
+</html>
+
+<!-- <c:forEach var = "i" begin = "1" end = "5">
+Item <c:out value = "${i}"/><p>
+</c:forEach> -->

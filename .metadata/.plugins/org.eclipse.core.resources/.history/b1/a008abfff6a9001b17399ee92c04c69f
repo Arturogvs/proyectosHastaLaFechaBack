@@ -1,0 +1,33 @@
+package com.everis.sumativa1.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class IndexController {
+
+	@RequestMapping("/")
+	public String index(Model model) {
+
+		return "inicio.jsp";
+	}
+	
+	@RequestMapping("/ingVenta")
+	public String index(Model model) {
+
+		return "formVenta.jsp";
+	}
+	
+	@RequestMapping("/ingProducto")
+	public String index(Model model) {
+
+		return "formProducto.jsp";
+	}
+	
+	@RequestMapping("/ingUsuario")
+	public String index(Model model) {
+
+		return "formUsuario.jsp";
+	}
+}

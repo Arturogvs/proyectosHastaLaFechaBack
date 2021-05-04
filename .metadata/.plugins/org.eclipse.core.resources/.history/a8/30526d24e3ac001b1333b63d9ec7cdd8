@@ -1,0 +1,5 @@
+package com.everis.query.repositories;
+
+public interface PersonaRepository {
+
+}

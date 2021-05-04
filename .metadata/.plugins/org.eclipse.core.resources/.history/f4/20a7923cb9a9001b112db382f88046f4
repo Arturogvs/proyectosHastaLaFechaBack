@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<ul>
+
+<li><c:out value="Nombre : ${nombre}"></c:out></li>
+
+<li><c:out value="Apellido : ${apellido}"></c:out></li>
+
+<li><c:out value="Límite : ${limite}"></c:out></li>
+
+<li><c:out value="Código Postal :${codigoPostal}"></c:out></li>
+
+
+</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Límite</th>
+      <th scope="col">Código Postal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>${nombre}</td>
+      
+    </tr>
+    <tr>
+     
+      <td> ${apellido}</td>
+      
+    </tr>
+    <tr>
+      
+      <td colspan="2">${limite}</td>
+      
+    </tr>
+    
+      <tr>
+      
+      <td colspan="2">${codigoPostal}</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>

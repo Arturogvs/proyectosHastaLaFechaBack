@@ -1,0 +1,62 @@
+package com.everis.sumativa1.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+import com.everis.sumativa1.models.Producto;
+import com.everis.sumativa1.services.ProductoService;
+
+
+@Controller
+public class ProductoController {
+
+	@Autowired
+		ProductoService productoService;
+	
+	@RequestMapping("/lp")
+	public String lp( Model model) {
+		List<Producto> lista_producto = productoService.listarProducto();
+		System.out.println(lista_producto);
+		model.addAttribute("lista",lista_producto);
+		return "listaProducto.jsp";
+	}
+	
+	
+	
+	@RequestMapping("/productos")
+	public String producto(@RequestParam(value = "codigo") String codigo,
+			@RequestParam(value = "nombre") String nombre, @RequestParam(value = "descripcion") String descripcion,
+			@RequestParam(value = "precio") String precio, Model model) {
+				
+				Producto producto = new Producto();
+				
+				producto.setCodigo(codigo);
+				producto.setNombre(nombre);
+				producto.setDescripcion(descripcion);
+				producto.setPrecio(precio);
+				
+				producto = productoService.guardarProducto(producto);
+				
+				
+				model.addAttribute("id", producto.getId());
+				model.addAttribute("codigo", producto.getCodigo());
+				model.addAttribute("nombre", producto.getNombre());
+				model.addAttribute("descripcion", producto.getDescripcion());
+				model.addAttribute("precio", producto.getPrecio());
+				System.out.println("campos de productos : "+codigo+" "+nombre+" "+descripcion+" "+precio);
+			
+			
+				
+				return "listaProducto.jsp";
+		
+	}
+	
+
+
+}

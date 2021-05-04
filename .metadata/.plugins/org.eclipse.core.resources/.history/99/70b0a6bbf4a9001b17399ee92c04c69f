@@ -1,0 +1,23 @@
+package com.everis.sumativa1.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+	
+
+@Controller
+public class UsuarioController {
+
+	@RequestMapping("/usuarios")
+	public String alumnos(@RequestParam(value = "nombre") String nombre,
+			@RequestParam(value = "apellido") String apellido, @RequestParam(value = "limite") String limite,
+			@RequestParam(value = "codigoPostal") String codigoPostal, Model model) {
+		
+		
+			return "formUsuario.jsp";
+		
+	}
+
+}

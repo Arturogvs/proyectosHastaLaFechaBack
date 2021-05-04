@@ -1,0 +1,5 @@
+package com.everis.query.controllers;
+
+public class PersonaController {
+
+}

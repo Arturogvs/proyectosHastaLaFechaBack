@@ -1,0 +1,6 @@
+package com.everis.formativa12.Models;
+
+@Entity
+public class Alumnno {
+
+}

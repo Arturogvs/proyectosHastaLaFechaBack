@@ -1,0 +1,11 @@
+package com.everis.data.repositories;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public interface ValdesRepository {
+
+	@Autowired
+	ValdesReposiroty valdesRepository;
+}

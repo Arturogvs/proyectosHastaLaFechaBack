@@ -1,0 +1,20 @@
+package com.everis.query.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/persona")
+public class PersonaController {
+	
+	@RequestMapping("/insertar")
+	public String insertarPersona(@RequestParam("nombre") String nombre,
+			@RequestParam("apellido") String apellido ) {
+			Persona persona = new Persona();
+			
+		
+		return ("");
+	}
+	
+}

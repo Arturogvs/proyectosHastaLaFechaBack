@@ -1,0 +1,17 @@
+package com.everis.formativa12.services;
+
+import org.springframework.stereotype.Service;
+
+import com.everis.formativa12.Models.Alumnno;
+
+
+@Service
+public class AlumnoService {
+
+	public boolean guardarAlumno(Alumnno alumno) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

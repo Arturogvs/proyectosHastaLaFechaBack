@@ -1,0 +1,40 @@
+package com.everis.sumativa1.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.everis.sumativa1.services.VentaService;
+
+@Controller
+public class IndexController {
+	@Autowired
+	VentaService ventaService;
+	
+	@RequestMapping("/")
+	public String index(Model model) {
+
+		return "index.jsp";
+	}
+	
+	@RequestMapping("/ingVenta")
+	public String ventaMenu(Model model) {
+		
+		return "formVenta.jsp";
+	}
+	
+	@RequestMapping("/ingProducto")
+	public String productoMenu(Model model) {
+
+		return "formProducto.jsp";
+	}
+	
+	@RequestMapping("/ingUsuario")
+	public String usuarioMenu(Model model) {
+
+		return "formUsuario.jsp";
+	}
+	
+	
+}

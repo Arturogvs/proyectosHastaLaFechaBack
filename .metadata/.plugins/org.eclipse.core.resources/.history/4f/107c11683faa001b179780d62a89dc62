@@ -1,0 +1,35 @@
+package com.everis.sumativa1.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.everis.sumativa1.models.Producto;
+import com.everis.sumativa1.repositories.ProductoRepository;
+
+@Service
+public class ProductoService {
+	
+	@Autowired
+	ProductoRepository productoRepository;
+	
+	public Producto guardarProducto(Producto producto) {
+		
+		return productoRepository.save(producto);
+	}
+	
+	public List<Producto> listarProducto() {
+		
+		return (List<Producto>) productoRepository.findAll();
+	}
+
+	public Producto actualizarProducto(Producto producto) {
+	
+	return productoRepository.save(producto);
+}
+	
+	
+	
+
+}

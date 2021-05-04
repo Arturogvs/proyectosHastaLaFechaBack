@@ -1,0 +1,13 @@
+package com.everis.data.repositories;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.everis.data.models.Valdes;
+
+@Repository
+public interface ValdesRepository extends CrudRepository<Valdes, Long> {
+
+	List<Valdes> findAll();
+}

@@ -1,0 +1,16 @@
+package com.everis.query.controllers;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HomeController {
+
+	
+	@RequestMapping("/")
+	public String main(){
+		
+		return "index.jsp";
+		
+		
+	}
+}

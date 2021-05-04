@@ -1,0 +1,40 @@
+package com.everis.sumativa1.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.everis.sumativa1.models.Venta;
+import com.everis.sumativa1.services.VentaService;
+
+@Controller
+public class VentaController {
+
+	@Autowired
+	VentaService ventaService;
+	@RequestMapping("/ingresarVentas")
+	public String ingresarVentas(@RequestParam(value = "codigo") String codigo,
+			@RequestParam(value = "producto") String producto, @RequestParam(value = "cantidad") String cantidad,
+			@RequestParam(value = "usuario") String usuario, Model model) {
+				
+		Venta venta = new Venta();
+		
+		venta.setCodigo(codigo);
+		venta.setProducto(producto);
+		venta.setCantidad(cantidad);
+		venta.setUsuario(usuario);
+		
+		
+		venta = ventaService.guardarVenta(venta);
+		
+		return "";
+		//return "redirect:/listarVentas";
+
+	}	
+}
+
+	
+	
+

@@ -1,0 +1,9 @@
+package com.everis.sumativa1.models;
+
+public class Venta {
+
+	private String codigo;
+	private String producto;
+	private String precio;
+	private String cantidad;
+}

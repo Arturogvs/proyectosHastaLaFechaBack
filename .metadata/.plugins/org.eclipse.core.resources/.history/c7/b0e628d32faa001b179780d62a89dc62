@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="usuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/ingProducto">Ingresar Productos</a></li>
+            <li><a class="dropdown-item" href="#">Listar Productos</a></li>
+          </ul>
+          
+        </li> 
+        
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="usuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ventas
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Ingresar Ventas</a></li>
+            <li><a class="dropdown-item" href="#">Listar Ventas</a></li>
+          </ul>
+          
+        </li> 
+        
+          <li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" id="usuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            Usuarios
+	          </a>
+	          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+	            <li><a class="dropdown-item" href="#">Ingresar Usuarios</a></li>
+	            <li><a class="dropdown-item" href="#">Listar Usuarios</a></li>
+	          </ul>
+          
+          </li> 
+      </ul>
+   
+    </div>
+  </div>
+</nav>
+	<input id="producto" href="/ingProducto">Ingreso de productos</input>
+	<input id="venta" href="/ingVenta">Ingreso de ventas</input>
+	<input id="usuario" href="/ingUsuario">Ingreso de usuarios</input>
+</body>
+</html>
+
+<!-- <c:forEach var = "i" begin = "1" end = "5">
+Item <c:out value = "${i}"/><p>
+</c:forEach> -->

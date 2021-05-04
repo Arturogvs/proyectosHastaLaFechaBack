@@ -1,0 +1,64 @@
+package com.everis.sumativa1.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.everis.sumativa1.models.Producto;
+import com.everis.sumativa1.models.Usuario;
+import com.everis.sumativa1.models.Venta;
+import com.everis.sumativa1.services.ProductoService;
+import com.everis.sumativa1.services.UsuarioService;
+
+@Controller
+public class IndexController {
+	@Autowired
+	ProductoService productoService;
+	@Autowired
+	UsuarioService usuarioService;
+	@Autowired
+	UsuarioService ventaService;
+	
+	@RequestMapping("/")
+	public String index(Model model) {
+		Usuario usuario1 = new Usuario("18891063","CARLOS","GUTIERREZ","1234");
+		Usuario usuario2 = new Usuario("18891064","JAIME","MARTINEZ","1234");
+		Usuario usuario3 = new Usuario("18891065","CRISTIAN","SILVA","1234");
+		
+		Producto producto1 = new Producto("1111","LECHE","DESCREMADA","2000");
+		Producto producto2 = new Producto("1112","ARROZ","INTEGRAL","2000");
+		Producto producto3 = new Producto("1113","PAN","INTEGRAL","1000");
+		
+		Venta venta1 = new Venta("5555","LECHE","2","CARLOS");
+		Venta venta2 = new Venta("5556","PAN","4","CARLOS");
+		Venta venta3 = new Venta("5557","ARROZ","5","CRISTIAN");
+		
+		
+		
+		
+		return "index.jsp";
+	}
+	
+	@RequestMapping("/ingVenta")
+	public String ventaMenu(Model model) {
+		
+		model.addAttribute("usuarios", usuarioService.listarUsuario());
+		model.addAttribute("productos", productoService.listarProducto());
+		return "formVenta.jsp";
+	}
+	
+	@RequestMapping("/ingProducto")
+	public String productoMenu(Model model) {
+
+		return "formProducto.jsp";
+	}
+	
+	@RequestMapping("/ingUsuario")
+	public String usuarioMenu(Model model) {
+
+		return "formUsuario.jsp";
+	}
+	
+	
+}

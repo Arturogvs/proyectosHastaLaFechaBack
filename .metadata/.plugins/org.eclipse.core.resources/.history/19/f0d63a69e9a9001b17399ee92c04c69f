@@ -1,0 +1,9 @@
+package com.everis.formativa12.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.everis.formativa12.Models.Alumnno;
+
+public interface AlumnoRepository extends CrudRepository<Alumnno, Long> {
+
+}

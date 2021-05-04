@@ -1,0 +1,36 @@
+package com.everis.data.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.everis.data.models.Valdes;
+import com.everis.data.services.ValdesService;
+
+
+@Controller
+public class ValdesController {
+
+	@Autowired
+	ValdesService valdesService;
+	
+	@RequestMapping("/ingresarUsuarios")
+	public String usuarios(
+			@RequestParam(value = "nombre") String nombre, @RequestParam(value = "apellido") String apellido
+			, Model model) {
+				
+		Valdes valdes = new Valdes();
+		
+		
+		valdes.setNombre(nombre);
+		valdes.setApellido(apellido);
+		
+		valdes = valdesService.guardarValdes(valdes);
+		
+		return "redirect:/ListarValdes";
+		
+	}
+	
+}

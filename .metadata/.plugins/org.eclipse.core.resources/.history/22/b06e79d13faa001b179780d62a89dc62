@@ -1,0 +1,23 @@
+package com.everis.sumativa1.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.everis.sumativa1.models.Producto;
+import com.everis.sumativa1.services.ProductoService;
+
+@RestController
+public class ApiListarController {
+	
+	@Autowired
+	ProductoService productoService;
+	
+	@RequestMapping("/lista/productos")
+	public List<Producto> lProductos(){
+		List<Producto> lista_producto = productoService.listarProducto();
+		return lista_producto;
+	}
+}
